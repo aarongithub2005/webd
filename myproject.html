@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>futurewithfuture</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+      <style>
+        .title{
+            font-weight: bold;
+            font-size: 30px;
+            font-family: Josefin Sans;
+            color: white;
+
+
+        }
+        .firstop{
+            background-color: yellow;
+            color: black;
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            
+            font-weight: bold;
+            font-family: Josefin Sans;
+        }
+        .secondop{
+            background-color: rgb(41, 152, 53);
+            color: black;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            font-family: Josefin Sans;
+        }
+        .thirdop{
+            background-color: rgb(37, 57, 96);
+            color: white;
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-family: Josefin Sans;
+        }
+        .clickhere{
+            display: block;
+            margin-top: 30px;
+            width: 300px;
+            font-family: Josefin Sans;
+            font-weight: bold;
+            height: 60px;
+            margin-left: 10px;
+            font-size: 20px;
+
+        }
+        
+        
+      </style>
+    </head>
+    <body>
+        <p class="title">Select any one of the options below....</p>
+        <button onclick="
+        alert('You chose to follow your passion. May you succeed.');" class="firstop">Follow your passion</button>
+        
+        <button onclick="
+        alert('You chose to earn lots of money,first learn to work hard you fool')" class="secondop">Earn lots of money</button>
+        <button onclick="
+        alert('You chose you have no ambitions. Grow the fuck up and be a man.');" class="thirdop">No ambitions</button>
+        <body style="background-color: rgb(2, 16, 18);"></body>
+        <button class="clickhere" onclick="
+        let randomNumber = Math.random();
+        console.log(Math.random());
+        if(randomNumber >= 0 && randomNumber < 1/3){
+            alert('Your future is bright. Good luck!!!');
+        } else if(randomNumber >= 1/3 && randomNumber < 2/3){
+            alert(`Don't give up. Work hard, your success is ahead.`);
+        } else if(randomNumber >= 2/3 && randomNumber < 1){
+            alert('You are useless');
+        }">Click here if you want to know about your future....</button>
+
+       <script>
+
+       </script>
+    </body>
+</html>
