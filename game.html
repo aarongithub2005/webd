@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+   
+<head>
+
+</head>
+<body>
+  
+<input placeholder="Enter your name" class="textbox">
+<button class="submit" onclick="  
+ 
+  const nameElement = document.querySelector('.textbox');
+  console.log(nameElement.value);
+  document.querySelector('.namesentence').innerHTML = ` Hello ${nameElement.value} select any one option below`;
+  document.querySelector('.heads').innerHTML = 'heads';
+  document.querySelector('.tails').innerHTML = 'tails';
+
+
+
+">Submit</button>
+<p class="namesentence"></p>
+<button class="heads"
+onclick=" 
+ userMove = 'heads';
+       if(randomNumber >= 0 && randomNumber < 1/2){
+        computerMove = 'heads';
+       
+      }
+      if(randomNumber >= 1/2 && randomNumber < 1){
+        computerMove = 'tails';
+      }
+      if(userMove === 'heads' && computerMove === 'heads'){
+        document.querySelector('.winner').innerHTML = `You win`;
+
+      }
+      else if(userMove === 'heads' && computerMove === 'tails'){
+        document.querySelector('.winner').innerHTML = `You loose`;
+
+      }
+      document.querySelector('.computermove').innerHTML = `Computer chose ${computerMove}`;
+         document.querySelector('.usermove').innerHTML = `You chose ${userMove}`;"></button> 
+       
+         
+<button class="tails" onclick=" 
+ userMove = 'tails';
+if(randomNumber >= 0 && randomNumber < 1/2){
+        computerMove = 'heads';
+       
+      }
+      if(randomNumber >= 1/2 && randomNumber < 1){
+        computerMove = 'tails';
+      }
+      if(userMove === 'tails' && computerMove === 'heads'){
+        document.querySelector('.winner').innerHTML = `You loose`;
+
+      }
+      else if(userMove === 'tails' && computerMove === 'tails'){
+        document.querySelector('.winner').innerHTML = `You win`;
+
+      }
+      document.querySelector('.computermove').innerHTML = `Computer chose ${computerMove}`;
+
+ 
+  document.querySelector('.usermove').innerHTML = `You chose ${userMove}`;"></button>
+  
+
+
+
+<p class="usermove"></p>
+<p class="computermove"></p>
+<p class="winner"></p>
+
+
+
+ <script>
+
+  let randomNumber = Math.random();
+  console.log(randomNumber);
+
+ 
+
+ 
+ 
+ 
+ </script>
+ 
+
+
+</body>
+
+</html>
