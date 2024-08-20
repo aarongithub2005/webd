@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mygymroutine</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <button class="profilepic">  <img src = "images2/blank.png" class="picimage"> 
+        
+        </button>
+        <input type="text" class="entername" placeholder="Enter your name"  id="namefield"  >
+        <button id="buttoncontinue" class="continue" >continue</button>
+        
+        <div class="name" id="heyname" ></div>
+     <p class="title">YOUR EXCERCISE</p>
+     <input placeholder="Date" class="box" type ="date">
+     <input placeholder="Enter excercise" class="onebox">
+     <input placeholder="sets" class="twobox">
+     <input placeholder="reps" class="threebox">
+     <button class="add" onclick="
+     
+      
+        main()
+        mainList()
+        ">Add</button>
+  <div class="values"></div>
+
+  <p class="diet">DIET PLAN</p>
+  <input type="date" class="dietdate" id="dietid">
+  <input placeholder="dish" class="dietdish" type="text" id="dishid">
+  <button class="add2" onclick="
+  mydiet()
+  dietRender()">Add</button>
+
+  <div class="dietvalues"></div>
+  
+
+
+        
+
+   
+</body>
+<style>
+    .continue{
+        font-family: Lexend;
+        font-weight: bold;
+        background-color: blue;
+        color: white;
+        border-width: 0px;
+        font-size: 15px;
+        border-radius: 3px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+    }
+    .dietvalues{
+        font-family: Lexend;
+        font-weight: bold;
+        
+    }
+    .dietdelete{
+        font-family: Lexend;
+        font-weight: bold;
+        background-color: blue;
+        color: white;
+        border-width: 0px;
+        font-size: 15px;
+        border-radius: 3px;
+
+
+    }
+    .profilepic{
+        border-radius: 10px;
+        border-color: none;
+        border-bottom-color: none;
+    }
+    .name{
+        font-family: Lexend;
+        font-weight: light;
+        margin-top: 10px;
+    }
+    .entername{
+        border-color:rgb(19, 120, 221);
+        font-family: Lexend;
+    }
+
+    .picimage{
+        width: 20px;
+        
+
+    }
+    .dietdate{
+        font-weight: bold;
+        border-color: rgb(19, 120, 221);
+    }
+    .dietdish{
+        font-family: Lexend;
+        border-color: rgb(19, 120, 221);
+    
+    }
+    .add2{
+        font-family: Lexend;
+        font-weight: bold;
+        background-color: blue;
+        color: white;
+        border-width: 0px;
+        font-size: 15px;
+        border-radius: 3px;
+
+    }
+    .diet{
+        font-family: Lexend;
+        font-weight: bold;
+        font-size: 30px;
+
+    }
+
+    .values{
+        font-family: Lexend;
+        font-weight: bold;
+        
+    }
+    .title{
+        font-family: Lexend;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .add{
+        font-family: Lexend;
+        font-weight: bold;
+        background-color: blue;
+        color: white;
+        border-width: 0px;
+        font-size: 15px;
+        border-radius: 3px;
+
+    }
+    .box{
+        font-family: Lexend;
+        font-weight: bold;
+        border-radius: 5px;
+        border-width: 2px;
+        border-color: rgb(19, 120, 221);
+    }
+    .onebox{
+        font-family: Lexend;
+        font-size: light;
+        border-radius: 5px;
+        border-width: 2px;
+        border-color: rgb(19, 120, 221);
+    }
+
+    .twobox{
+        font-family: Lexend;
+        font-size: light;
+        border-radius: 5px;
+        border-width: 2px;
+        border-color: rgb(19, 120, 221);
+        
+
+    }
+    .threebox{
+        font-family: Lexend;
+        font-size: light;
+        border-radius: 5px;
+        border-width: 2px;
+        border-color: rgb(19, 120, 221);
+    
+
+    }
+    .deletebutton{
+        font-family: Lexend;
+        font-weight: bold;
+        background-color: blue;
+        color: white;
+        border-width: 0px;
+        font-size: 15px;
+        border-radius: 3px;
+
+
+    }
+
+    
+    
+  
+
+ 
+
+</style>
+    <script>
+   
+    let mainArray = [];
+    let wordone = `sets`;
+    let wordtwo = `reps`;
+    function main(){
+        const inputElement = document.querySelector('.box');
+        const date  = inputElement.value;
+        const excerciseElement = document.querySelector('.onebox');
+        const excercise =  excerciseElement.value;
+        const setElement= document.querySelector('.twobox');
+        const sets = setElement.value +  `${wordone}`;
+        const repElement = document.querySelector('.threebox');
+        const reps = repElement.value +  `${wordtwo}`;
+        mainArray.push(date);
+        mainArray.push(excercise); 
+        mainArray.push(sets);
+        mainArray.push(reps);
+        console.log(mainArray);
+    }
+
+     
+
+
+
+
+
+    
+    function mainList(){
+        
+        let valuesHTML = '';
+        for(let i=0; i < mainArray.length; i++){
+            const value = mainArray[i];
+            const html = `<p>${value} <button class= "deletebutton" onclick="
+            mainArray.splice(${i},1);
+            console.log(mainArray);
+            
+
+            mainList();">delete</button></p>`;
+            valuesHTML += html;
+            document.querySelector('.values').innerHTML = valuesHTML;
+        
+           
+        
+        }
+        
+    }
+
+     let secondarray = [];
+    function mydiet(){
+        const dietdateElement = document.querySelector('.dietdate');
+        datetwo = dietdateElement.value;
+        const dishElement = document.querySelector('.dietdish');
+        dish = dishElement.value;
+       secondarray.push(datetwo);
+       secondarray.push(dish);
+       console.log(secondarray);
+  
+    }
+ 
+       function dietRender(){
+
+       
+       let dietvalueHTML = '';
+        for(let i=0; i < secondarray.length; i++){
+            let values = secondarray[i];
+            let html = `<p>${values} <button class="dietdelete" onclick="
+                secondarray.splice(${i},1);
+            
+                dietRender();">delete</button>
+                </p>`;
+                
+            dietvalueHTML += html;
+            document.querySelector('.dietvalues').innerHTML = dietvalueHTML;
+        
+         
+            
+            
+         
+        }
+
+    }
+     
+     
+    
+    function savelocalStorage(){
+        let input = document.getElementById('namefield').value;
+        localStorage.setItem('myuserinput', input);
+        displayData();
+    }
+
+
+    function displayData(){
+        const savedInput = localStorage.getItem('myuserinput');
+        const displayElement = document.getElementById('heyname');
+        if(savedInput){
+            displayElement.textContent = `Hello ${savedInput} track your fitness journey here`;
+        } else{
+            displayElement.textContent = 'No data found';
+
+
+        }
+
+        
+    }
+
+    document.getElementById('buttoncontinue').addEventListener('click', savelocalStorage);
+        window.addEventListener('load', displayData);
+
+
+ 
+
+       
+
+   
+
+    
+</script>
+</html>
+
+
+
+
+   
+
+  
+
+
+
+
+
+      
+    
+    
+       
+    
+
+      
+    
+    
+        
+    
+        
+
+
+       
+        
+       
+      
+
+      
+    
+ 
